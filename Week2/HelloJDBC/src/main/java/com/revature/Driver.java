@@ -2,12 +2,15 @@ package com.revature;
 
 import java.util.List;
 
+import com.revature.models.Avenger;
 import com.revature.models.Home;
+import com.revature.services.AvengerService;
 import com.revature.services.HomeService;
 
 public class Driver {
 	
 	private static HomeService hService = new HomeService();
+	private static AvengerService aService = new AvengerService();
 
 	public static void main(String[] args) {
 		List<Home> list = hService.getAllHomes();
@@ -30,7 +33,11 @@ public class Driver {
 		
 		h = hService.findHomeByName("Fury's secret bunker");
 		System.out.println(h);
+		System.out.println("======================================");
 		
+		List<Avenger> aList = aService.avengersAssemble();
+		
+		System.out.println(aList);
 	}
 
 }
