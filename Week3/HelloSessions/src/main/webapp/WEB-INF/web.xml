@@ -18,6 +18,10 @@
   	<servlet-name>SuccessServlet</servlet-name>
   	<servlet-class>com.revature.controllers.SuccessServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<servlet-class>com.revature.controllers.LogoutServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
@@ -26,6 +30,10 @@
   <servlet-mapping>
   	<servlet-name>SuccessServlet</servlet-name>
   	<url-pattern>/success</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/logout</url-pattern>
   </servlet-mapping>
   
 </web-app>
