@@ -53,6 +53,12 @@ public class FrontControllerServlet extends HttpServlet {
 				}
 			} else if (req.getMethod().equals("POST")) {
 				avControl.addAvenger(req, resp);
+			} else if (req.getMethod().equals("PUT")&&sections.length==2) {
+				avControl.putAvenger(req, resp);
+			} else if (req.getMethod().equals("PATCH")&&sections.length==2) {
+				avControl.patchAvenger(req, resp);
+			} else if (req.getMethod().equals("DELETE")&&sections.length==2) {
+				avControl.killAvenger(resp, sections[1]);
 			}
 			break;
 		case "homes":
@@ -73,5 +79,28 @@ public class FrontControllerServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);
 	}
+	
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
+	}
 
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
+	}
+	
+	protected void doPatch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
+	}
+	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		if(req.getMethod().equals("PATCH")) {
+			doPatch(req, resp);
+		}else {
+			super.service(req, resp);
+		}
+	}
+	
 }

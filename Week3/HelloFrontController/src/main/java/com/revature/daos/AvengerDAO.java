@@ -11,5 +11,7 @@ public interface AvengerDAO {
 	public boolean addAvenger(Avenger a);
 	public List<Avenger> findByHome(String homeName);
 	public boolean addAvengerWithHome(Avenger a); 
+	public boolean updateAvenger(Avenger a);
+	public boolean deleteAvenger(int id);
 
 }
