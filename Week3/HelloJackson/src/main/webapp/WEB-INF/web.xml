@@ -18,6 +18,6 @@
   
   <servlet-mapping>
   	<servlet-name>AvengerServlet</servlet-name>
-  	<url-pattern>/avengers</url-pattern>
+  	<url-pattern>/avengers/*</url-pattern>
   </servlet-mapping>
 </web-app>

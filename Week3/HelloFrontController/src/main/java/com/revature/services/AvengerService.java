@@ -19,7 +19,7 @@ public class AvengerService {
 	public boolean addAvenger(Avenger a) {
 		return aDao.addAvenger(a);
 	}
-
+	
 	public Avenger getOneAvenger(int id) {
 		return aDao.findById(id);
 	}
